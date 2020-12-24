@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AutoLockToggle</string>
+    <string name="locktime_tile">Disable Automatic Lock</string>
+</resources>
