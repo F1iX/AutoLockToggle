@@ -4,5 +4,5 @@
     <string name="desc0">Welcome to AutoLockToggle!\n\nTo use it, few settings need to be adjusted. The following pages will guide you through the setup.\n\nAutoLockToggle relies on changing the automatic lock timer, which is considered to be an Android system setting. On non-rooted devices, the permissions needed for changing these can only be granted by connecting your device to a computer with Android Debugging Bridge installed and running the given command.</string>
     <string name="desc1">Second, open the automatic lock settings and disable instant lock on power button press.</string>
     <string name="desc2">Select AutoLockToggle from the list in the modify system settings dialog and allow modifying system settings.</string>
-    <string name="desc3">Open the quick settings menu by sliding down twice from the top of your screen, hit the pencil icon, drag the AutoLockToggle tile to a position of your choice and enjoy the AutoLockToggle!</string>
+    <string name="desc3">Open the quick settings menu by sliding down twice from the top of your screen.\n\nHit the pencil icon and drag the AutoLockToggle tile to a position of your choice.\n\nEnjoy your new AutoLockToggle tile!</string>
 </resources>

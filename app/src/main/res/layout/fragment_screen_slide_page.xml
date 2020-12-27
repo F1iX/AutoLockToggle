@@ -9,11 +9,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView style="?android:textAppearanceMedium"
+            android:id="@+id/desc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/desc0"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:id="@+id/desc_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/desc_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="10dp" />
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/desc_img"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/desc_button"
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
             android:layout_margin="10dp" />
@@ -25,22 +41,6 @@
             app:layout_constraintTop_toBottomOf="@id/desc_img"
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
-            android:layout_margin="10dp" />
-
-        <TextView style="?android:textAppearanceMedium"
-            android:id="@+id/desc_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/desc_img2"
-            android:text="@string/desc1"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/desc_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/desc_text"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="10dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
