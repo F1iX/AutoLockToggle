@@ -27,15 +27,21 @@ public class PageFragment extends Fragment {
         TextView textView = (TextView) rootView.findViewById(R.id.desc_text);
         ImageView imageView = (ImageView) rootView.findViewById(R.id.desc_img);
         ImageView imageView2 = (ImageView) rootView.findViewById(R.id.desc_img2);
+        ImageView imageViewBg = (ImageView) rootView.findViewById(R.id.bg_img);
         Button button = (Button) rootView.findViewById(R.id.desc_button);
 
         switch (pos){
             case 0:
+                textView.setText(getText(R.string.intro));
+                imageViewBg.setImageDrawable(getResources().getDrawable(R.drawable.bike_teaser));
+                button.setVisibility(View.GONE);
+                break;
+            case 1:
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.desc0_1_adb_grant_permission, null));
                 textView.setText(getText(R.string.desc0));
                 button.setVisibility(View.GONE);
                 break;
-            case 1:
+            case 2:
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.desc1_1_screen_lock_settings, null));
                 imageView2.setImageDrawable(getResources().getDrawable(R.drawable.desc1_2_disable_power_instant_lock, null));
                 textView.setText(getText(R.string.desc1));
@@ -47,7 +53,7 @@ public class PageFragment extends Fragment {
                     }
                 });
                 break;
-            case 2: // TODO: Not needed with ADB command
+            case 3: // TODO: Not needed with ADB command
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.desc2_1_select_modify_system_settings, null));
                 imageView2.setImageDrawable(getResources().getDrawable(R.drawable.desc2_2_enable_modify_system_settings, null));
                 textView.setText(getText(R.string.desc2));

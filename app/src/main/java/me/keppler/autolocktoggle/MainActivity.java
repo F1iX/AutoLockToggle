@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NUM_PAGES = 4;
+    private static final int NUM_PAGES = 5;
 
     // The pager widget, which handles animation and allows swiping horizontally to access previous and next wizard steps
     private ViewPager2 viewPager;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("Current", String.valueOf(Settings.Secure.getLong(getContentResolver(), "lock_screen_lock_after_timeout", 5000)));
+        Log.d("AutoLockToggle", "CurrentLockTimer: " + String.valueOf(Settings.Secure.getLong(getContentResolver(), "lock_screen_lock_after_timeout", 0)));
 
         viewPager = findViewById(R.id.pager);
         pagerAdapter = new ScreenSlidePagerAdapter(this);
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         // Attach TabLayoutMediator automatically updating active tab dot indicator
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
         }).attach();
+
+        // TODO: Custom duration setting in persistent storage
     }
 
     /**

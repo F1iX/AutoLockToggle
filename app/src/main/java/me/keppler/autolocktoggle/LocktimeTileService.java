@@ -41,11 +41,12 @@ public class LocktimeTileService extends TileService {
         try{
             Settings.Secure.putLong(getContentResolver(), "lock_screen_lock_after_timeout", value);
             String new_setting = String.valueOf(Settings.Secure.getLong(getContentResolver(), "lock_screen_lock_after_timeout", 0)/1000);
-            Log.d("Current", new_setting);
+            Log.d("AutoLockToggle", "CurrentLockTimer: " + new_setting);
             Toast toast = Toast.makeText(context, "Screen locks after " + new_setting + " s", Toast.LENGTH_SHORT);
             toast.show();
             return true;
-        } catch (Exception e) {
+        } catch (SecurityException e) {
+            Log.e("AutoLockToggle", "exception", e);
             Intent intent = new Intent(this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivityAndCollapse(intent);
