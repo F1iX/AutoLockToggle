@@ -1,3 +1,11 @@
+/**
+ * MainActivity for AutoLockToggle, an app providing a quick settings tile to quickly
+ * change auto lock timer from 0 seconds to minutes. Für Eva.
+ *
+ * @author  F1iX
+ * @version 1.0
+ * @since   2020-12-24
+ */
 package me.keppler.autolocktoggle;
 
 import androidx.appcompat.app.AppCompatActivity;
