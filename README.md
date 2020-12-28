@@ -3,7 +3,7 @@ Adds an Android quick settings tile to change automatic screen lock timer from 0
 
 Immediate screen lock upon power button press usually comes in handy to prevent your phone from going crazy in your pocket. However, when mounted to a bicycle or car phone mount, you might want to turn off the screen and re-enable it without having to unlock while riding a bumpy road.
 
-![Screenshot(screenshot.png "App Screenshot")
+![Screenshot](screenshot.png "App Screenshot")
 
 # Full install instructions
 1. Clone this repository and build and install with Android Studio
