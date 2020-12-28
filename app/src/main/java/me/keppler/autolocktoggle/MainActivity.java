@@ -1,6 +1,7 @@
 package me.keppler.autolocktoggle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -9,6 +10,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -41,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         // Attach TabLayoutMediator automatically updating active tab dot indicator
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
         }).attach();
-
-        // TODO: Custom duration setting in persistent storage
     }
 
     /**
@@ -63,5 +65,28 @@ public class MainActivity extends AppCompatActivity {
             return NUM_PAGES;
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.app_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_configure_timer:
+                DialogFragment dialog = new SetLockTimerDialog();
+                dialog.show(getSupportFragmentManager(), "SetLockTimerDialog");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+
 
 }

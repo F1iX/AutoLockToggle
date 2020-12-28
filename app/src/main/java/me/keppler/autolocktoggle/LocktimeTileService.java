@@ -2,6 +2,7 @@ package me.keppler.autolocktoggle;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
@@ -17,10 +18,13 @@ public class LocktimeTileService extends TileService {
     public void onClick() {
         super.onClick();
 
+        // Access shared preferences for stored settings value
+        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(getText(R.string.app_name).toString(), Context.MODE_PRIVATE);
+
         Tile tile = getQsTile();
         switch (tile.getState()) {
             case Tile.STATE_INACTIVE:
-                if (setLocktime(6000000)){
+                if (setLocktime(sharedPref.getInt(getString(R.string.locktime_key), 6000))){
                     tile.setState(Tile.STATE_ACTIVE);
                 };
                 break;
@@ -35,14 +39,14 @@ public class LocktimeTileService extends TileService {
         tile.updateTile();
     }
 
-    boolean setLocktime(int value) {
+    boolean setLocktime(int value_s) {
         Context context = getApplicationContext();
 
         try{
-            Settings.Secure.putLong(getContentResolver(), "lock_screen_lock_after_timeout", value);
-            String new_setting = String.valueOf(Settings.Secure.getLong(getContentResolver(), "lock_screen_lock_after_timeout", 0)/1000);
-            Log.d("AutoLockToggle", "CurrentLockTimer: " + new_setting);
-            Toast toast = Toast.makeText(context, "Screen locks after " + new_setting + " s", Toast.LENGTH_SHORT);
+            Settings.Secure.putLong(getContentResolver(), "lock_screen_lock_after_timeout", value_s * 1000);
+            String new_setting_s = String.valueOf(Settings.Secure.getLong(getContentResolver(), "lock_screen_lock_after_timeout", 0)/1000);
+            Log.d("AutoLockToggle", "CurrentLockTimer: " + new_setting_s);
+            Toast toast = Toast.makeText(context, "Screen locks after " + new_setting_s + " s", Toast.LENGTH_SHORT);
             toast.show();
             return true;
         } catch (SecurityException e) {
