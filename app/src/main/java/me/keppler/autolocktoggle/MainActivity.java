@@ -19,7 +19,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int NUM_PAGES = 5;
+    private static final int NUM_PAGES = 4;
 
     // The pager widget, which handles animation and allows swiping horizontally to access previous and next wizard steps
     private ViewPager2 viewPager;

@@ -53,18 +53,19 @@ public class PageFragment extends Fragment {
                     }
                 });
                 break;
-            case 3: // TODO: Not needed with ADB command
-                imageView.setImageDrawable(getResources().getDrawable(R.drawable.desc2_1_select_modify_system_settings, null));
-                imageView2.setImageDrawable(getResources().getDrawable(R.drawable.desc2_2_enable_modify_system_settings, null));
-                textView.setText(getText(R.string.desc2));
+                /* Not needed with ADB command
+                case 3:
+                    imageView.setImageDrawable(getResources().getDrawable(R.drawable.desc2_1_select_modify_system_settings, null));
+                    imageView2.setImageDrawable(getResources().getDrawable(R.drawable.desc2_2_enable_modify_system_settings, null));
+                    textView.setText(getText(R.string.desc2));
 
-                button.setText("Modify System Settings");
-                button.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        startActivity(new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS));
-                    }
-                });
-                break;
+                    button.setText("Modify System Settings");
+                    button.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            startActivity(new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS));
+                        }
+                    });
+                    break;*/
             default:
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.desc3_1_edit_drawer, null));
                 imageView2.setImageDrawable(getResources().getDrawable(R.drawable.desc3_2_add_tile, null));
