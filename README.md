@@ -6,9 +6,9 @@ Immediate screen lock upon power button press usually comes in handy to prevent 
 ![Screenshot](screenshot.gif "App Screenshot")
 
 # Install
-1. Clone this repository and build and install with Android Studio or download latest build from [releases](https://github.com/F1iX/AutoLockToggle/releases/latest/download/app-debug.apk)
+1. Download latest .apk-build from [releases](https://github.com/F1iX/AutoLockToggle/releases/latest/download/app-debug.apk) with your smartphone or clone this repository and build and install with Android Studio 
 1. Follow the setup guide provided in the app
-    1. Connect your device to a computer with [Android Debugging Bridge](https://developer.android.com/studio/releases/platform-tools.html) installed and run
+    1. Connect your device with USB debugging enabled in developer options to a computer with [Android Debugging Bridge](https://developer.android.com/studio/releases/platform-tools.html) installed and run
         ```
         adb shell pm grant me.keppler.autolocktoggle android.permission.WRITE_SECURE_SETTINGS
         ```
